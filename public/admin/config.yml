@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: correosurla/nextjs-decapcms
+  branch: main # Branch to update (optional; defaults to master)
+  base_url: https://correosur.pages.dev
+  auth_endpoint: /api/auth
 
 # local_backend: true
 
