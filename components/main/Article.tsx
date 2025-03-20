@@ -47,7 +47,7 @@ const Article = () => {
             </Link>
           ))}
           <div className='p-5 border-[0.5px] border-black text-center'>
-            <Link href={'/project'} className="flex justify-center">
+            <Link href={'/news'} className="flex justify-center">
               <div className="text-mini btn btn border-[3px] border-black text-black px-[50px] py-2 w-fit">
                 ดูทั้งหมด
               </div>
