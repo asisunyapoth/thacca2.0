@@ -58,7 +58,7 @@ export default function NewsPage({ params }: { params: { slug: string } }) {
           <img src={news.image} className='w-full mt-2 mb-5' alt="" />
           <h1 className='text-3xl font-jamjuree font-bold mb-5 text-red-700'>{news.title}</h1>
             <p className='font-jamjuree text-detail text-wrap mb-3'>
-              {format(news.date,'d MMM yyyy')}
+              {news.date ? format(new Date(news.date), 'd MMM yyyy') : 'Date not available'}
             </p>
             <div className='font-jamjuree text-detail text-wrap mb-3'
               dangerouslySetInnerHTML={{ __html: convertMDTextToHTML(news.body.raw) }} />
