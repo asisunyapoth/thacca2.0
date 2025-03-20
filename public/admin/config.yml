@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: asisunyapoth/thacca2.0 # DGA-Thailand/thacca
+  repo: DGA-Thailand/thacca2.0
   branch: main # Branch to update (optional; defaults to master)
 media_folder: public/images
 public_folder: /images
