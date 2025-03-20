@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {
   Blog,
+  News,
   Inspiration,
   Podcasts,
   Resources,
@@ -13,7 +14,7 @@ import { AUTHOR_NAME } from '../config'
 export default function PostHeader({
   data,
 }: {
-  data: Blog | Inspiration | Podcasts | Resources | Tools
+  data: Blog | News | Inspiration | Podcasts | Resources | Tools
 }) {
   return (
     <>

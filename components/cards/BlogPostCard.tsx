@@ -8,7 +8,7 @@ export default function BlogPostCard({ post }: { post: Blog }) {
   return (
     <Link
       key={post.slug}
-      href={`/blog/${post.slug}/`}
+      href={`/news/${post.slug}/`}
       className={cardClasses + ' sm:p-6'}
     >
       <h3 className="font-bold text-lg text-balance">{post.title}</h3>

@@ -29,6 +29,142 @@ const Page = defineDocumentType(() => ({
   },
 }))
 
+const About = defineDocumentType(() => ({
+  name: 'About',
+  filePathPattern: `about/*.md`,
+  contentType: 'markdown',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    date: {
+      type: 'date',
+      required: false,
+    },
+    description: {
+      type: 'string',
+      required: false,
+    },
+    tags: {
+      type: 'json',
+      required: false,
+    },
+    image: {
+      type: 'string',
+      required: false,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.md/, ''),
+    },
+  },
+}))
+
+const Article = defineDocumentType(() => ({
+  name: 'Article',
+  filePathPattern: `article/*.md`,
+  contentType: 'markdown',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    date: {
+      type: 'date',
+      required: false,
+    },
+    description: {
+      type: 'string',
+      required: false,
+    },
+    tags: {
+      type: 'json',
+      required: false,
+    },
+    image: {
+      type: 'string',
+      required: false,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.md/, ''),
+    },
+  },
+}))
+
+const Committee = defineDocumentType(() => ({
+  name: 'Committee',
+  filePathPattern: `committee/*.md`,
+  contentType: 'markdown',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    date: {
+      type: 'date',
+      required: false,
+    },
+    description: {
+      type: 'string',
+      required: false,
+    },
+    tags: {
+      type: 'json',
+      required: false,
+    },
+    image: {
+      type: 'string',
+      required: false,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.md/, ''),
+    },
+  },
+}))
+
+const News = defineDocumentType(() => ({
+  name: 'News',
+  filePathPattern: `news/*.md`,
+  contentType: 'markdown',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    date: {
+      type: 'date',
+      required: false,
+    },
+    description: {
+      type: 'string',
+      required: false,
+    },
+    tags: {
+      type: 'json',
+      required: false,
+    },
+    image: {
+      type: 'string',
+      required: false,
+    },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.md/, ''),
+    },
+  },
+}))
+
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
   filePathPattern: `blog/*.md`,
@@ -249,6 +385,6 @@ const Resources = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Page, Blog, Inspiration, Podcasts, Tools, Resources],
+  documentTypes: [Page, About, Article, Committee, News, Blog, Inspiration, Podcasts, Tools, Resources],
   disableImportAliasWarning: true,
 })

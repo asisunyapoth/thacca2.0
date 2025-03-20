@@ -1,8 +1,8 @@
 export default {
   openGraph: {
     type: 'website',
-    locale: 'en',
-    url: 'https://design-code.tips',
-    site_name: 'design-code.tips',
+    locale: 'th',
+    url: 'https://thacca.go.th',
+    site_name: 'Thailand Creative Culture Agency (THACCA)',
   },
 };

@@ -5,7 +5,7 @@ backend:
   base_url: https://correosur.pages.dev
   auth_endpoint: /api/auth
 
-# local_backend: true
+local_backend: true
 
 # publish_mode: editorial_workflow
 

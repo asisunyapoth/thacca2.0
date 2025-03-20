@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- No background rectangle at all -->
+  
+  <!-- Transparent dot pattern -->
+  <defs>
+    <pattern id="dotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="3" fill="white" fill-opacity="0.6"/>
+    </pattern>
+  </defs>
+  
+  <!-- Apply the dot pattern to the entire SVG -->
+  <rect x="0" y="0" width="400" height="400" fill="url(#dotPattern)"/>
+</svg>

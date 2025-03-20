@@ -1,193 +1,116 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html {
-  overflow-x: hidden;
-  margin-right: calc(-1 * (100vw - 100%));
-  font-size: 20px;
+
+@font-face {
+  font-family: 'font-normal';
+  src: url('/font/IBM_Plex_Sans_Thai/IBMPlexSansThai-Regular.ttf') format('truetype');
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #fafafa;
+@font-face {
+  font-family: 'font-medium';
+  src: url('/font/IBM_Plex_Sans_Thai/IBMPlexSansThai-Medium.ttf') format('truetype');
 }
 
-#__next {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@font-face {
+  font-family: 'font-bold';
+  src: url('/font/IBM_Plex_Sans_Thai/IBMPlexSansThai-Bold.ttf') format('truetype');
 }
 
-main {
-  margin: auto;
+@font-face {
+  font-family: 'font-light';
+  src: url('/font/IBM_Plex_Sans_Thai/IBMPlexSansThai-Thin.ttf') format('truetype');
 }
 
-.blog-post {
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  line-height: 1.8;
-  font-weight: 300;
+@font-face {
+  font-family: 'font-sarabun';
+  src: url('/font/Sarabun/Sarabun-Regular.ttf') format('truetype');
 }
 
-.blog-post * {
-  margin-block: 1.75rem;
+@font-face {
+  font-family: 'font-jamjuree';
+  src: url('/font/Bai_Jamjuree/BaiJamjuree-Medium.ttf') format('truetype');
 }
 
-.blog-post h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-block: 3rem 1rem;
-  text-wrap: balance;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "font-normal" !important;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  scroll-behavior: smooth;
 }
 
-.blog-post h2 + h3 {
-  margin-block-start: 0rem;
-  text-wrap: balance;
+*::-webkit-scrollbar {
+  display: none;
 }
 
-.blog-post h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-block: 2rem 1rem;
-  text-wrap: balance;
+
+.swiper-pagination-bullet {
+  width: 40px !important;
+  height: 10px;
+  margin: 0 10px;
+  background-color: #000;
+  border-radius: 10px !important;
 }
 
-.blog-post h4 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-block: 2rem 1rem;
-  text-wrap: balance;
+.swiper-pagination-bullet-active {
+  background-color: #B30D14 !important;
 }
 
-.blog-post a {
-  font-weight: 550;
-  border-bottom: currentColor 0.5px solid;
-}
-.blog-post a:hover,
-.blog-post a:focus {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.blog-post hr {
-  border: none;
-  border-bottom: 1.5px solid currentColor;
-  opacity: 0.2;
-}
-
-.blog-post img {
+.bg-content {
+  background-image: url('/image/bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 460px;
   width: 100%;
 }
 
-.blog-post pre {
-  font-size: 0.8rem;
-  margin-bottom: 2rem !important;
+.font-sarabun {
+  font-family: "font-sarabun" !important;
+  font-weight: 400 !important;
 }
 
-.blog-post pre:last-child {
-  margin-bottom: 0 !important;
+.font-jamjuree {
+  font-family: "font-jamjuree" !important;
+  font-weight: 400 !important;
 }
 
-.blog-post p:not(:has(video, img)),
-.blog-post ul {
-  max-width: 860px;
-  text-wrap: balance;
+.text-title {
+  font-family: "font-medium" !important;
+  font-size: 24px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 28px !important;
 }
 
-.blog-post p {
-  letter-spacing: 0.05ch;
+.text-md {
+  font-family: "font-normal" !important;
+  font-weight: 700 !important;
 }
 
-@media screen and (min-width: 600px) {
-  .blog-post p {
-    text-wrap: pretty;
-  }
+.text-detail {
+  font-family: "font-sarabun" !important;
+  font-family: Sarabun;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
 }
 
-.blog-post p code,
-.blog-post ul code,
-.blog-post ol code,
-.blog-post blockquote code {
-  font-size: 0.9rem;
-  font-weight: bold;
-  padding-inline: 0.2rem;
+.text-lg {
+  font-family: "font-bold" !important;
+  font-weight: 600 !important;
 }
 
-.blog-post blockquote,
-.blog-post img,
-.blog-post video {
-  border-radius: 0.75rem;
-  margin-inline: auto;
-}
-
-.blog-post ul,
-.blog-post ol {
-  padding-inline-start: 1rem;
-}
-.blog-post ul {
-  list-style-type: disc;
-}
-
-.blog-post ul ul {
-  list-style-type: circle;
-}
-
-.blog-post ol {
+.ol {
   list-style-type: decimal;
-}
-
-.blog-post ul ul,
-.blog-post ol ol {
-  padding-inline-start: 2rem;
-  margin-block: 0 1rem;
-}
-
-.blog-post li {
-  display: list-item;
-  margin-block: 0.5rem;
-  text-wrap: balance;
-}
-
-.blog-post blockquote {
-  border-left: 0.25rem solid color-mix(in srgb, currentColor 20%, transparent);
-  background-color: color-mix(in srgb, currentColor 5%, transparent);
-  padding: 0.25rem 1.5rem;
-  margin-block: 1rem;
-  font-style: italic;
-}
-
-.blog-post ul li > a {
-  padding: 0.6ch 0;
-}
-
-/* Manually set the background color of the code blocks to match the theme: */
-.blog-post :not(pre) > code[class*='language-'],
-.blog-post pre[class*='language-'] {
-  background: #1e293c;
-}
-
-@media (prefers-color-scheme: dark) {
-  .blog-post :not(pre) > code[class*='language-'],
-  .blog-post pre[class*='language-'] {
-    background: #1e293ccc;
-  }
-}
-
-::-webkit-scrollbar {
-  height: 0.25rem;
-  width: 0.25rem;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
+  list-style-position: inside;
 }
