@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from "clsx"
+import { News } from "../.contentlayer/generated"
 import { twMerge } from "tailwind-merge"
 import showdown from 'showdown'
 
@@ -24,7 +25,7 @@ export function truncate(str: string, n: number) {
   return (str.length > n ? str.substring(0, n - 1) + '...' : str)
 }
 
-export function getSummaryText(news: News) : string {
+export function getSummaryText(news: { body: { html: string } }) : string {
   try {
     return truncate(news.body.html, 200)
   } catch (error) {

@@ -28,7 +28,7 @@ export default function BlogPage({ params }: { params: { page: string } }) {
           <Link href={item.slug} key={i} className="lg:flex ">
             <div className='border-[0.5px] lg:border-b-0 border-black lg:block flex justify-between'>
               <div className='h-[100px] w-full lg:w-[90px] border-[0.5px] lg:border-t-0 lg:border-b-black lg:border-r-0 border-r-black py-5 flex items-center justify-center'>
-                {format(item.date,'d/M/yy')}
+                {item.date ? format(new Date(item.date), 'd/M/yy') : 'N/A'}
               </div>
               <div className='h-[100px] w-full lg:w-[90px] flex items-center py-5 text-center'>
                 <img src={getIcon('')} width={50} height={50} className='mx-auto' alt="" />

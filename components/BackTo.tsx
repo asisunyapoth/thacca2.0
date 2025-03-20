@@ -1,5 +1,5 @@
 'use client'
-import { generateHref } from "@/app/utils/common.util";
+import { generateHref } from "../utils/common.util";
 import Link from "next/link";
 import React from "react";
 
