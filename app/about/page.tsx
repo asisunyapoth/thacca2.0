@@ -8,21 +8,7 @@ import { AUTHOR_NAME, SITE_NAME, SITE_URL } from '../../config'
 // Get page data
 const about = allAbouts.find((about: About) => about?.slug === '_index') as About
 
-export function generateMetadata(): Metadata {
-  return {
-    title: about?.title || 'About',
-    description: about?.description || 'About THACCA',
-    openGraph: {
-      url: `${SITE_URL}/about/`,
-      title: `${about?.title}`,
-      description: `${about?.description}`,
-      authors: `${AUTHOR_NAME}`,
-      siteName: `${SITE_NAME}`,
-    },
-  }
-}
-
-export default function About() {
+export default function AboutPage() {
   return (
     <>
     <div className='lg:max-w-[90vw] mx-auto p-2'>
