@@ -15,7 +15,7 @@ export default function AboutPage() {
     <div className='lg:max-w-[90vw] mx-auto p-2'>
       <div className="flex flex-col">
         <div className="text-left text-top">
-          <Image src={about.image || '/images/image.jpg'} className='w-full mt-2 mb-5' alt="" />
+          <Image src={about.image || '/images/image.jpg'} width={600} height={300} className='w-full mt-2 mb-5' alt="" />
           <div className='font-jamjuree text-detail text-wrap mb-3'
             dangerouslySetInnerHTML={{ __html: about.body.raw }} />
         </div>

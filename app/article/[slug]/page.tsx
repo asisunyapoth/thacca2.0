@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { allNews, News } from '../../../.contentlayer/generated'
+import { allArticles, Article } from '../../../.contentlayer/generated'
 import Image from 'next/image'
 import Layout from '../../../components/Layout'
 import BlogPost from '../../../components/BlogPost'
@@ -13,23 +13,23 @@ export async function generateMetadata({
 }: {
   params: { slug: string }
 }): Promise<Metadata> {
-  const news = allNews.find((news) => news.slug === params.slug) as News
+  const article = allArticles.find((item) => item.slug === params.slug) as Article
 
-  if (!news) {
+  if (!article) {
     return notFound()
   }
 
   return {
-    title: news.title,
-    description: news.description,
+    title: article.title,
+    description: article.description,
     openGraph: {
       type: 'article',
-      url: `${SITE_URL}/news/${news.slug}/`,
-      title: news.title,
-      description: news.description,
-      publishedTime: news.date,
+      url: `${SITE_URL}/article/${article.slug}/`,
+      title: article.title,
+      description: article.description,
+      publishedTime: article.date,
       authors: `${AUTHOR_NAME}`,
-      tags: news.tags,
+      tags: article.tags,
       images: [
         {
           url: `${SITE_URL}/og-card.png`,
@@ -44,10 +44,10 @@ export async function generateMetadata({
   }
 }
 
-export default function NewsPage({ params }: { params: { slug: string } }) {
-  const news = allNews.find((news) => news.slug === params.slug)
+export default function ArticlePage({ params }: { params: { slug: string } }) {
+  const article = allArticles.find((item) => item.slug === params.slug)
 
-  if (!news) {
+  if (!article) {
     return notFound()
   }
 
@@ -56,14 +56,14 @@ export default function NewsPage({ params }: { params: { slug: string } }) {
       <div className='lg:max-w-[90vw] mx-auto p-2'>
         <div className="flex flex-col">
           <div className="text-left text-top">
-          <Image src={news.image || '/images/default-image.png'} className='w-full mt-2 mb-5' alt="" />
-          <h1 className='text-3xl font-jamjuree font-bold mb-5 text-red-700'>{news.title}</h1>
+          <Image src={article.image || '/images/default-image.png'} width={600} height={300} className='w-full mt-2 mb-5' alt="" />
+          <h1 className='text-3xl font-jamjuree font-bold mb-5 text-red-700'>{article.title}</h1>
             <p className='font-jamjuree text-detail text-wrap mb-3'>
-              {news.date ? format(new Date(news.date), 'd MMM yyyy') : 'Date not available'} 
+              {article.date ? format(new Date(article.date), 'd MMM yyyy') : 'Date not available'} 
             </p>
             <div className='font-jamjuree text-detail text-wrap mb-3'
-              dangerouslySetInnerHTML={{ __html: convertMDTextToHTML(news.body.raw) }} />
-            <p className='font-jamjuree text-detail text-wrap mb-3'>Tags : {news.tags}</p>
+              dangerouslySetInnerHTML={{ __html: convertMDTextToHTML(article.body.raw) }} />
+            <p className='font-jamjuree text-detail text-wrap mb-3'>Tags : { article && article.tags && article.tags.join(' #') }</p>
           </div>
         </div>
       </div>

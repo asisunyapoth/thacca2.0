@@ -41,10 +41,10 @@ export default function ArticlePage({ params }: { params: { page: string } }) {
                   <p className='text-title' dangerouslySetInnerHTML={{ __html: item.title }} />
                   <p className='font-jamjuree text-detail text-wrap' 
                     dangerouslySetInnerHTML={{ __html: getSummaryText(item) }}></p>
-                  <p className='font-jamjuree text-detail'>{item.tags}</p>
+                  <p className='font-jamjuree text-detail'>{ item && item.tags && item.tags.join(' #') }</p>
                 </div>
                 <div className='lg:order-2  md:order-2 order-1 mb-2 '>
-                  <Image src={item.image || '/images/default-image.png'} className='w-full md:w-[450px] lg:w-[340px]' alt="" />
+                  <Image src={item.image || '/images/default-image.png'} width={600} height={300} className='w-full md:w-[450px] lg:w-[340px]' alt="" />
                 </div>
               </div>
             </div>
