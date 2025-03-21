@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { allNews, News } from '../../../.contentlayer/generated'
+import Image from 'next/image'
 import Layout from '../../../components/Layout'
 import BlogPost from '../../../components/BlogPost'
 import { AUTHOR_NAME, SITE_NAME, SITE_URL } from '../../../config'
@@ -55,7 +56,7 @@ export default function NewsPage({ params }: { params: { slug: string } }) {
       <div className='lg:max-w-[90vw] mx-auto p-2'>
         <div className="flex flex-col">
           <div className="text-left text-top">
-          <img src={news.image} className='w-full mt-2 mb-5' alt="" />
+          <Image src={news.image || '/images/fallback-image.jpg'} className='w-full mt-2 mb-5' alt="" />
           <h1 className='text-3xl font-jamjuree font-bold mb-5 text-red-700'>{news.title}</h1>
             <p className='font-jamjuree text-detail text-wrap mb-3'>
               {news.date ? format(new Date(news.date), 'd MMM yyyy') : 'Date not available'}

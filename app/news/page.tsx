@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 import { allNews, News } from '../../.contentlayer/generated'
 import { pick } from '@contentlayer2/client'
 import { sortByDate } from '../../utils'
@@ -31,7 +32,7 @@ export default function BlogPage({ params }: { params: { page: string } }) {
                 {item.date ? format(new Date(item.date), 'd/M/yy') : 'N/A'}
               </div>
               <div className='h-[100px] w-full lg:w-[90px] flex items-center py-5 text-center'>
-                <img src={getIcon('')} width={50} height={50} className='mx-auto' alt="" />
+                <Image src={getIcon('')} width={50} height={50} className='mx-auto' alt="" />
               </div>
             </div>
             <div className='w-full border-[0.5px] lg:border-l-0 lg:border-b-0 border-black'>
@@ -43,14 +44,14 @@ export default function BlogPage({ params }: { params: { page: string } }) {
                   <p className='font-jamjuree text-detail'>{item.tags}</p>
                 </div>
                 <div className='lg:order-2  md:order-2 order-1 mb-2 '>
-                  <img src={item.image} className='w-full md:w-[450px] lg:w-[340px]' alt="" />
+                  <Image src={item.image || '/images/default-image.png'} className='w-full md:w-[450px] lg:w-[340px]' alt="" />
                 </div>
               </div>
             </div>
           </Link>
         ))}
         <div className='p-5 border-[0.5px] border-black text-center'>
-          <Link href={'/project'} className="flex justify-center">
+          <Link href={'/news'} className="flex justify-center">
             <div className="text-mini btn btn border-[3px] border-black text-black px-[50px] py-2 w-fit">
               ดูทั้งหมด
             </div>

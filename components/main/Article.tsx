@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 import { allNews, News } from '../../.contentlayer/generated'
 import { pick } from '@contentlayer2/client'
 import { sortByDate } from '../../utils'
@@ -28,7 +29,7 @@ const Article = () => {
                   {item.date ? format(new Date(item.date), 'd/M/yy') : 'N/A'}
                 </div>
                 <div className='h-[100px] w-full lg:w-[90px] flex items-center py-5 text-center'>
-                  <img src={getIcon('')} width={50} height={50} className='mx-auto' alt="" />
+                  <Image src={getIcon('')} width={50} height={50} className='mx-auto' alt="" />
                 </div>
               </div>
               <div className='w-full border-[0.5px] lg:border-l-0 lg:border-b-0 border-black'>

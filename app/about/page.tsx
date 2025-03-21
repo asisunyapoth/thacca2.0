@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import { allAbouts, About } from '../../.contentlayer/generated'
 import Layout from '../../components/Layout'
 import ReactMarkdown from 'react-markdown'
@@ -14,7 +15,7 @@ export default function AboutPage() {
     <div className='lg:max-w-[90vw] mx-auto p-2'>
       <div className="flex flex-col">
         <div className="text-left text-top">
-          <img src={about.image} className='w-full mt-2 mb-5' alt="" />
+          <Image src={about.image || '/images/image.jpg'} className='w-full mt-2 mb-5' alt="" />
           <div className='font-jamjuree text-detail text-wrap mb-3'
             dangerouslySetInnerHTML={{ __html: about.body.raw }} />
         </div>

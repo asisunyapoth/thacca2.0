@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import { allCommittees, Committee } from '../../../.contentlayer/generated'
 import { AUTHOR_NAME, SITE_NAME, SITE_URL } from '../../../config'
 import { convertMDTextToHTML } from '../../../utils/utils'
@@ -41,7 +42,7 @@ export default function NewsPage({ params }: { params: { slug: string } }) {
       <div className='lg:max-w-[90vw] mx-auto p-2'>
         <div className="flex flex-col">
           <div className="text-left text-top">
-          <img src={committee.image} className='w-full mt-2 mb-5' alt="" />
+          <Image src={committee.image || '/images/default-image.png'} className='w-full mt-2 mb-5' alt="" />
           <h1 className='text-3xl font-jamjuree font-bold mb-5 text-red-700'>{committee.title}</h1>
             <div className='font-jamjuree text-detail text-wrap mb-3'
               dangerouslySetInnerHTML={{ __html: convertMDTextToHTML(committee.body.raw) }} />

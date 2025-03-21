@@ -13,19 +13,19 @@ const mockHero = [
     {
         title: `รับชมย้อนหลัง  เวทีแสดงวิสัยทัศน์ Global Soft Power Talks 2025 : <br> “The New Rules of Soft Power” กับ 5 กูรูผู้เชี่ยวชาญซอฟต์พาวเวอร์ 5 ด้าน และ <br> ปาฐกถาพิเศษ โดย น.ส.แพทองธาร ชินวัตร นายกรัฐมนตรี`,
         detail: ``,
-        url: 'https://thacca.go.th/article/2025-03-03-04-56-38/',
+        url: '/article/2025-03-03-04-56-38/',
         image: "/image/banner/04-Banner.jpg"
     },
     {
         title: "ปลดล็อกกฎหมายสำเร็จไปอีกขั้น   เทศกาลภาพยนตร์ระหว่างประเทศ ฉายหนังไม่ต้องผ่านกองเซนเซอร์",
         detail: ``,
-        url: 'https://thacca.go.th/news/2025-02-13-04-47-00/',
+        url: '/news/2025-02-13-04-47-00/',
         image: "/image/banner/01-Banner.jpg"
     },
     {
         title: `THACCA - Thailand Creative Culture Agency คือ องค์กรผู้นำการขับเคลื่อนซอฟต์พาวเวอร์ไทย ผ่านการฝึกอบรมทักษะสร้างสรรค์ พัฒนาระบบนิเวศและโครงสร้างพื้นฐานอุตสาหกรรม  พร้อมยกระดับสินค้า-บริการจากวัฒนธรรมไทยสู่เวทีโลก`,
         detail: ``,
-        url: 'https://thacca.go.th/news/2025-02-03-09-31-46/',
+        url: '/news/2025-02-03-09-31-46/',
         image: "/image/banner/03-Banner.jpg"
     },
     {
@@ -51,7 +51,7 @@ const Hero = () => {
                 {mockHero.map((item, index) => (
                     <SwiperSlide key={index} className="mx-auto text-center border-[0.5px] border-black">
                         <Link href={item.url}>
-                            <img src={item.image} width={350} height={150} alt="Background" className="w-full " />
+                            <Image src={item.image} width={350} height={150} alt="Background" className="w-full " />
                             <div className="border-t border-gray-300 py-8 p-3 h-[350px] md:h-[220px]  lg:h-[200px] flex justify-center items-center">
                                 <div className="text-title p-4" dangerouslySetInnerHTML={{ __html: item.title }} />
                             </div>
