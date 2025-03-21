@@ -48,11 +48,7 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
       
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.message || 'Something went wrong');
-      }
+      const result = await response.json().catch(() => null);
       
       // Reset form on success
       setFormData({
