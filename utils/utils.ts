@@ -33,15 +33,22 @@ export function getSummaryText(news: { body: { html: string } }) : string {
   }
 }
 
-export function getIcon(type: string) : string {
-  switch (type) {
-      case 'festival':
-          return '/icon/001.png';
-      case 'collaboration':
-          return '/icon/002.png';
-      case 'film':
-          return '/icon/003.png';
-      default:
-          return '/icon/001.png';
+interface TagsType {
+  includes: (industry: string) => boolean;
+}
+
+export function getIcon(type: TagsType): string {
+  try {
+    const industries: string[] = ['sport', 'food', 'festival', 'music', 'book', 'tourism', 'film', 'fashion', 'game', 'art', 'design', 'wellness', 'performingarts'];
+
+    for (let i = 0; i < industries.length; i++) {
+      if (type.includes(industries[i])) {
+        return '/icon/' + industries[i] + '.png';
+      }
+    }
+
+    return '/icon/softpower.png';
+  } catch (error) {
+    return '/icon/softpower.png';
   }
 }

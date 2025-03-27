@@ -74,15 +74,15 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>
-                <div className={`flex items-center justify-center mt-3 p-8 h-[75vh] bg-[#F2F1ED] lg:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+                <div className={`flex items-center justify-center mt-3 p-8 h-[85vh] bg-[#F2F1ED] lg:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
                     <ul className="flex flex-col justify-center space-y-8 text-center">
                         {menuMobileItem.map((item, index) => (
                             <>
                                 <li key={index} onClick={() => setIsMenuOpen(false)} className={cn('cursor-pointer pb-2 mx-auto  w-full', pathname === item.url ? 'text-main' : '')}>
                                     <Link className="text-[1.4rem]" href={item.url} >{item.title}</Link>
                                 </li>
-                                {([0, 1, 2]).includes(index) && <div className="border-b-2 border-[#DBDAD5] w-[50vw] mx-auto"></div>}
-                                {([3]).includes(index) && <div className="w-[50vw] mx-auto"></div>}
+                                {([0, 1, 2, 3, 4, 5]).includes(index) && <div className="border-b-2 border-[#DBDAD5] w-[50vw] mx-auto"></div>}
+                                {([6]).includes(index) && <div className="w-[50vw] mx-auto"></div>}
                             </>
                         ))}
                     </ul>

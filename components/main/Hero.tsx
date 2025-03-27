@@ -53,7 +53,7 @@ const Hero = () => {
                         <Link href={item.url}>
                             <Image src={item.image} width={350} height={150} alt="Background" className="w-full " />
                             <div className="border-t border-gray-300 py-8 p-3 h-[350px] md:h-[220px]  lg:h-[200px] flex justify-center items-center">
-                                <div className="text-title p-4" dangerouslySetInnerHTML={{ __html: item.title }} />
+                                <div className="text-title tracking-wide p-4" dangerouslySetInnerHTML={{ __html: item.title }} />
                             </div>
                         </Link>
                     </SwiperSlide>
